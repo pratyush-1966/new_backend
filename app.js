@@ -42,9 +42,9 @@ const corsOptions = {
   credentials: true,
 };
 
-app.use(cors(corsOptions));
-app.options("*", cors(corsOptions)); // Handle preflight requests
-// app.use(cors());
+app.use(cors(corsOptions));// Handle preflight requests
+app.options("*", cors(corsOptions)); 
+app.use(cors());
 // Routes
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/items', authenticateUser, itemsRouter);
