@@ -35,16 +35,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // ✅ Updated CORS configuration
-// const corsOptions = {
-//   origin: "https://craftopia-silk.vercel.app",
-//   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-//   allowedHeaders: ["Content-Type", "Authorization"],
-//   credentials: true,
-// };
+const corsOptions = {
+  origin: "http://localhost:3000",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+};
 
-// app.use(cors(corsOptions));
-// app.options("*", cors(corsOptions)); // Handle preflight requests
-app.use(cors());
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions)); // Handle preflight requests
+// app.use(cors());
 // Routes
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/items', authenticateUser, itemsRouter);
