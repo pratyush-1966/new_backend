@@ -36,7 +36,7 @@ app.use(express.json());
 
 // ✅ Updated CORS configuration
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: "https://frontsiuu.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
